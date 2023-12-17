@@ -122,8 +122,12 @@ Brocked hostに記載されているconfig.hosts << "f6bead4bfa184ea2adb9887d3bf
 ![ap起動ブラウザ](https://github.com/mizuki-w2/RaiseTech/assets/151617091/a2e5ed60-d079-4f90-8cb1-4afae1fd07de)    
 アプリの起動に成功。  
 
-#### APサーバーについて 
+#### APサーバーについて   
+**APサーバー**とは…アプリケーションのリクエストを処理し、レスポンスをクライアントに返す役割を担う。  
+railsアプリケーションとAPサーバーは連携して動作している。  
+
 - `rails s`でRailsを起動させAPサーバーの名前とバージョンを確認。（v5.6.5）
+  
  ![pumaバージョン](https://github.com/mizuki-w2/RaiseTech/assets/151617091/c753bb96-0740-4176-8589-8908f5fdd288)
 
  rails起動後、`Ctrl+Cキー`を入力してPumaを停止させる。  
@@ -135,7 +139,10 @@ Brocked hostに記載されているconfig.hosts << "f6bead4bfa184ea2adb9887d3bf
 
 `rails s`で再起動ができる。 
 
-#### DBサーバについて  
+#### DBサーバについて   
+
+**DBサーバー**とは…データーベース管理システム（DBMS）を実行し、データーベースのアクセスを提供するサーバー。  
+
 `mysql -u root -p`でmysqlにログインし、バージョンを確認。(v8.0.35)  
 ![スクリーンショット 2023-12-17 203428](https://github.com/mizuki-w2/RaiseTech/assets/151617091/47c73671-a921-456d-980f-a6b8679d6d4e)  
 
@@ -153,6 +160,6 @@ Brocked hostに記載されているconfig.hosts << "f6bead4bfa184ea2adb9887d3bf
 
 ### 感想
 
-ひとつひとつのコマンドの意味を調べ、エラーの解決を探すのにかなり苦戦した。  
+ひとつひとつのコマンドの意味を調べ、エラーの解決を探すのにかなり時間がかかった。  
 小さな疑問はこまめにメモしながら解決していくしかないので、焦らずしっかり理解していきたい。
 
