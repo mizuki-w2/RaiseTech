@@ -1,8 +1,9 @@
 ### 第３回課題提出  
 
+- サンプルアプリケーションのデプロイ
 - APサーバーについて調べる
 - DBサーバについて調べる
-- サンプルアプリケーションのデプロイ
+
   
 ### 取り組んだこと、学んだこと
 
@@ -97,7 +98,7 @@ database.ymlのsoketに張り付ける。（２カ所あり）
   頭文字はファイルの種別でそれ以降は３桁ずつ読んでいき、左から「読み取り権限」「書き込み権限」「実行権限」の順で表記される。  
 
 パーミッションによく使われる種類
-- 644（rw-r-r-）所有者　グループ　その他のユーザーともに読み取りは出来るが実行権限がなく、所有者のみ書き込みができる。  
+- 644（rw-r-r-）所有者、グループ、その他のユーザーともに読み取りは出来るが実行権限がなく、所有者のみ書き込みができる。  
 - 755（rwxr-xr-x）オーナーは、読み取り、書き込み、実行すべての権限を設定できる。グループとその他の人は、書き込みだけは許されておらず、実行は可能。  
 - 666（rw-rw-rw-）3つの立場は同じ権限が与えられており、読み取りと書き込みは出来るが、実行権限がない。
 - 777（rwxrwxrwx）３つの立場にすべての権限がある状態。
@@ -107,8 +108,82 @@ database.ymlのsoketに張り付ける。（２カ所あり）
 
 再度アプリケーション起動。  
 
-![起動](https://1drv.ms/i/c/e776efc90acd7ea5/ER-cUAAx6S1DiQeUZQd78UcB37U9JkCxavIJqdb__66ecg?e=PjCSjN)  
-Brocked hostのエラー表示。  
+![起動](https://github.com/mizuki-w2/RaiseTech/assets/151617091/af90376b-7659-48d2-aa73-dd928a167911)
+
+Brocked hostのエラーが表示される。  
+
+configの中のenvironmentsのdevelopment.rbを開く。  
+
+Brocked hostに記載されているconfig.hosts << "f6bead4bfa184ea2adb9887d3bfef649.vfs.cloud9.ap-southeast-2.amazonaws.com"をdevelopment.rbのendの手前に張り付ける。  
+再びアプリケーションを起動する。`bin/cloud9_dev`  
+![ap起動](https://github.com/mizuki-w2/RaiseTech/assets/151617091/34301d83-c835-496d-95b2-53c43fafc9e3)  
+
+
+![ap起動ブラウザ](https://github.com/mizuki-w2/RaiseTech/assets/151617091/a2e5ed60-d079-4f90-8cb1-4afae1fd07de)    
+アプリの起動に成功。  
+
+#### APサーバーについて 
+- `rails s`でRailsを起動させAPサーバーの名前とバージョンを確認。（v5.6.5）
+ ![pumaバージョン](https://github.com/mizuki-w2/RaiseTech/assets/151617091/c753bb96-0740-4176-8589-8908f5fdd288)
+
+ rails起動後、`Ctrl+Cキー`を入力してPumaを停止させる。  
+ 
+ 
+  ![puma停止](https://github.com/mizuki-w2/RaiseTech/assets/151617091/11cfe7d8-2475-459b-846c-067b3d3b3141)
+
+プレビューするとエラーが表示され、起動できなくなる。  
+
+`rails s`で再起動ができる。 
+
+#### DBサーバについて  
+`mysql -u root -p`でmysqlにログインし、バージョンを確認。(v8.0.35)  
+![スクリーンショット 2023-12-17 203428](https://github.com/mizuki-w2/RaiseTech/assets/151617091/47c73671-a921-456d-980f-a6b8679d6d4e)  
+
+`exit`で終了し、`sudo service mysqld stop`でmysqlを停止させる。  
+![スクリーンショット 2023-12-17 204538](https://github.com/mizuki-w2/RaiseTech/assets/151617091/1bb11fb4-0d99-497a-80b6-d7fa4441087d)  
+`rails s`を入力してもアプリケーションは起動しない。  
+
+`sudo service mysqld start`でmysqlを起動。  
+`rails s`で再度アプリケーション起動。  
+![スクリーンショット 2023-12-13 194446](https://github.com/mizuki-w2/RaiseTech/assets/151617091/c4508f6c-294c-4bf8-8dc1-addd92919684)
+
+起動後**active(running)**　になっていることを確認。  
+
+![スクリーンショット 2023-12-17 205512](https://github.com/mizuki-w2/RaiseTech/assets/151617091/9237d4b9-ac6f-4e32-a2da-097dcbe9879b)  
+
+### 感想
+
+ひとつひとつのコマンドの意味を調べ、エラーの解決を探すのにかなり苦戦した。  
+小さな疑問はこまめにメモしながら解決していくしかないので、焦らずしっかり理解していきたい。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
