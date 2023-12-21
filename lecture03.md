@@ -108,7 +108,7 @@ database.ymlのsoketに張り付ける。（２カ所あり）
 
 再度アプリケーション起動。  
 
-![起動](/RaiseTech/lecture.png/画像01.png)
+![起動](/RaiseTech/lecture.png/01.png)
 
 Brocked hostのエラーが表示される。  
 
@@ -116,10 +116,10 @@ configの中のenvironmentsのdevelopment.rbを開く。
 
 Brocked hostに記載されているconfig.hosts << "f6bead4bfa184ea2adb9887d3bfef649.vfs.cloud9.ap-southeast-2.amazonaws.com"をdevelopment.rbのendの手前に張り付ける。  
 再びアプリケーションを起動する。`bin/cloud9_dev`  
-![ap起動](/RaiseTech/lecture.png/画像02.png)  
+![ap起動](/RaiseTech/lecture.png/02.png)  
 
 
-![ap起動ブラウザ](/RaiseTech/lecture.png/画像03.png)    
+![ap起動ブラウザ](/RaiseTech/lecture.png/03.png)    
 アプリの起動に成功。  
 
 #### APサーバーについて   
@@ -128,12 +128,12 @@ railsアプリケーションとAPサーバーは連携して動作している�
 
 - `rails s`でRailsを起動させAPサーバーの名前とバージョンを確認。（v5.6.5）
   
- ![pumaバージョン](/RaiseTech/lecture.png/画像04.png)
+ ![pumaバージョン](/RaiseTech/lecture.png/04.png)
 
  rails起動後、`Ctrl+Cキー`を入力してPumaを停止させる。  
  
  
-  ![puma停止](/RaiseTech/lecture.png/画像05.png)
+  ![puma停止](/RaiseTech/lecture.png/05.png)
 
 プレビューするとエラーが表示され、起動できなくなる。  
 
@@ -144,19 +144,19 @@ railsアプリケーションとAPサーバーは連携して動作している�
 **DBサーバー**とは…データーベース管理システム（DBMS）を実行し、データーベースのアクセスを提供するサーバー。  
 
 `mysql -u root -p`でmysqlにログインし、バージョンを確認。(v8.0.35)  
-![mysql](/RaiseTech/lecture.png/画像06.png)  
+![mysql](/RaiseTech/lecture.png/06.png)  
 
 `exit`で終了し、`sudo service mysqld stop`でmysqlを停止させる。  
-![mysql停止](/RaiseTech/lecture.png/画像07.png)  
+![mysql停止](/RaiseTech/lecture.png/07.png)  
 `rails s`を入力してもアプリケーションは起動しない。  
 
 `sudo service mysqld start`でmysqlを起動。  
 `rails s`で再度アプリケーション起動。  
-![mysql起動](/RaiseTech/lecture.png/画像08.png)
+![mysql起動](/RaiseTech/lecture.png/08.png)
 
 起動後**active(running)**　になっていることを確認。  
 
-![状態確認](/RaiseTech/lecture.png/画像09.png)  
+![状態確認](/RaiseTech/lecture.png/09.png)  
 
 ### 感想
 
