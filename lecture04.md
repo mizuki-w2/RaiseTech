@@ -1,1 +1,1 @@
-/RaiseTech/lecture04-image/03.png
+/RaiseTech/03.png/03.png
